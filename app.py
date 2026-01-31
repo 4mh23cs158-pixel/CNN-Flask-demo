@@ -7,7 +7,7 @@ def index():
 
 @app.route("/<name>")
 def hello(name):
-    return render_template("name.html", name=name)
+    return render_template("name.html", name=name,image=name+".jpg")
 
 @app.route("/abc")
 def abc():
