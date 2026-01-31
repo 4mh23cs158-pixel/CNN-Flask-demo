@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Flask Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background circles */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: wave 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(20deg);
+            }
+
+            75% {
+                transform: rotate(-20deg);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .flask-icon {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="emoji">👋</div>
+            <h1>Hello, World!</h1>
+            <p class="subtitle">Welcome to your Flask application</p>
+            <div class="badge">
+                <svg class="flask-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M7 2v2h1v14a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V4h1V2H7zm4 14.5L8.5 14 11 11.5 13.5 14 11 16.5zm4.87-9.89a.5.5 0 0 1-.37.89h-7a.5.5 0 0 1-.37-.89l3.5-3.5a.5.5 0 0 1 .74 0l3.5 3.5z" />
+                </svg>
+                Powered by Flask
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
